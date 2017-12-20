@@ -1,0 +1,10 @@
+.header-container {
+  text-align: center;
+}
+
+.logo {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: white;
+}
