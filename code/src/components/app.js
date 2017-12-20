@@ -1,6 +1,7 @@
 import React from "react"
 import Form from "components/form/form.js"
 import Item from "components/item/item.js"
+import Header from "components/header/header.js"
 
 class App extends React.Component {
 
@@ -33,7 +34,8 @@ class App extends React.Component {
 
    render() {
      return (
-       <div>
+       <div className="app-container">
+         <Header />
          <Form addItemToList={this.addItem} />
          <div className="ItemsList">
 
