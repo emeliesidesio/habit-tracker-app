@@ -1,4 +1,5 @@
 import React from "react"
+import calendaricon from "assets/calendar.png"
 import "./header.css"
 
 export default class Header extends React.Component {
@@ -6,7 +7,7 @@ export default class Header extends React.Component {
     return (
       <div className="header-container">
         <div className="logo">Habit tracker</div>
-        <img src="./calendar.png" alt="" />
+        <img className="calendaricon" src={calendaricon} alt="" />
       </div>
     )
   }
