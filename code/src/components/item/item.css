@@ -1,0 +1,62 @@
+.Items{
+  width: 110px;
+  height: 110px;
+  position: relative;
+  /*background-color: red;*/
+}
+
+.item-plus{
+  font-size: 100px;
+  font-weight: 100;
+  line-height: 100px;
+  text-align: center;
+  color: #000;
+}
+.item-circle{
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.done-circle{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: purple;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.done-circle-checked {
+  display: none;
+}
+
+.done-checkbox-checked:checked{
+background-color: red;
+}
+
+.checkbox{
+  font-size: 25px;
+  color: #fff;
+}
+
+
+.remove{
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: #000;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.remove-icon{
+  font-size: 45px;
+  color: white;
+  font-weight: 200;
+  line-height: 23px;
+}
