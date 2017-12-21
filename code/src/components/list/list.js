@@ -1,30 +1,20 @@
 import React from "react"
 import "./list.css"
+import Item from "components/item/item"
 
 export default class List extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      itemStatus: ""
-    }
-  }
 
   render() {
-    if (this.state.itemStatus !== this.state.item) {
-      return (
-        <div>
-          <ul>
-            <li id="item-1">+</li>
-          </ul>
-        </div>
-      )} else {
-      return (
-        <Item
-          key={toDoItems}
-          toDoitem={toDoItems}
-          clickedCheckbox={this.checkItem}
-          removeItem={this.removeItem} />
-      )
-    }
+    return (
+      <div>
+        {this.props.toDoItems.map(toDoItems => (
+          <Item
+            key={toDoItems.id}
+            toDoitem={toDoItems.value}
+            clickedCheckbox={this.checkItem}
+            removeItem={this.removeItem} />
+        ))}
+      </div>
+    )
   }
 }
