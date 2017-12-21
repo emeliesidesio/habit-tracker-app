@@ -51,19 +51,41 @@
 }
 
 .habiticon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   margin-right: 10px;
   margin-bottom: 10px;
 }
 
-.habiticon:hover {
+.radiolabel > .radioinput {
+  visibility: hidden;
+  position: absolute;
+}
+
+.radiolabel > .radioinput:checked + img {
   opacity: 0.3;
   cursor: pointer;
+}
+
+.habiticon:hover {
+  cursor: pointer;
+  opacity: 0.3;
 }
 
 .day:hover {
   background-color: white;
   opacity: 1;
   color: black;
+}
+
+.checklabel > .checkinput {
+  visibility: hidden;
+  position: absolute;
+}
+
+.checklabel > .checkinput:checked + h6 {
+  background-color: white;
+  opacity: 1;
+  color: black;
+  cursor: pointer;
 }
