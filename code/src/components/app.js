@@ -2,6 +2,7 @@ import React from "react"
 import Form from "components/form/form.js"
 import Item from "components/item/item.js"
 import Header from "components/header/header.js"
+import Calendar from "components/header/header.js"
 
 class App extends React.Component {
 
@@ -47,6 +48,7 @@ class App extends React.Component {
                removeItem={this.removeItem} />
            ))}
          </div>
+         <Calendar />
        </div>
      )
    }
