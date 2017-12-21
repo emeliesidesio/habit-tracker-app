@@ -41,11 +41,12 @@ class App extends React.Component {
    render() {
      return (
        <div className="app-container">
+         {/* <Item /> */}
          <Header />
          <Form addItemToList={this.addItem} />
          <div className="ItemsList">
-            <List
-        toDoItems={this.state.toDoItems} />
+           <List
+             toDoItems={this.state.toDoItems} />
          </div>
          <Calendar />
        </div>
