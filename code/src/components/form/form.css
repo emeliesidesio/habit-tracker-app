@@ -34,11 +34,13 @@
 
 .day {
   border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 12px;
   font-weight: 300;
   color: white;
   text-transform: uppercase;
-  text-align: center;
   width: 30px;
   height: 30px;
   border-radius: 50%;
