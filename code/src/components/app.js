@@ -2,13 +2,18 @@ import React from "react"
 import Form from "components/form/form.js"
 import Item from "components/item/item.js"
 import Header from "components/header/header.js"
+import List from "components/list/list"
 
 class App extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      toDoItems: []
+      toDoItems: [{ id: 1, value: "+" }, { id: 2, value: "+" },
+        { id: 3, value: "+" }, { id: 4, value: "+" },
+        { id: 5, value: "+" }, { id: 6, value: "+" },
+        { id: 7, value: "+" }, { i: 8, value: "+" }
+      ]
     }
   }
 
@@ -38,14 +43,8 @@ class App extends React.Component {
          <Header />
          <Form addItemToList={this.addItem} />
          <div className="ItemsList">
-
-           {this.state.toDoItems.map(toDoItems => (
-             <Item
-               key={toDoItems}
-               toDoitem={toDoItems}
-               clickedCheckbox={this.checkItem}
-               removeItem={this.removeItem} />
-           ))}
+            <List
+        toDoItems={this.state.toDoItems} />
          </div>
        </div>
      )
