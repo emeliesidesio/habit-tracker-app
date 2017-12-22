@@ -7,11 +7,15 @@ import piggybank from "assets/piggy-bank.png"
 import leaf from "assets/leaf.png"
 import pint from "assets/pint.png"
 import strong from "assets/strong.png"
+import luggage from "assets/luggage.png"
+import tickets from "assets/tickets.png"
+import star from "assets/star.png"
+import balloons from "assets/balloons.png"
 import ChooseIcon from "components/form/chooseicon"
 import TimesWeek from "components/form/timesweek"
 import "./form.css"
 
-const radio = [carrot, heart, cleaning, petfood, piggybank, leaf, pint, strong]
+const radio = [carrot, heart, cleaning, petfood, piggybank, luggage, balloons, strong, pint, tickets, star, leaf]
 const checkbox = ["1", "2", "3", "4", "5", "6", "7"]
 
 export default class Form extends React.Component {
