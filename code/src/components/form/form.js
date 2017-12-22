@@ -1,12 +1,14 @@
 import React from "react"
-import carrot from "assets/carrot.png"
-import heart from "assets/heart.png"
-import cleaning from "assets/cleaning.png"
-import petfood from "assets/pet-food.png"
-import piggybank from "assets/piggy-bank.png"
-import leaf from "assets/leaf.png"
-import pint from "assets/pint.png"
-import strong from "assets/strong.png"
+// import carrot from "assets/carrot.png"
+// import heart from "assets/heart.png"
+// import cleaning from "assets/cleaning.png"
+// import petfood from "assets/pet-food.png"
+// import piggybank from "assets/piggy-bank.png"
+// import leaf from "assets/leaf.png"
+// import pint from "assets/pint.png"
+// import strong from "assets/strong.png"
+import ChooseIcon from "components/form/chooseicon"
+import TimesWeek from "components/form/timesweek"
 import "./form.css"
 
 export default class Form extends React.Component {
@@ -14,7 +16,9 @@ export default class Form extends React.Component {
     super(props)
     this.state = {
       newToDoItem: "",
-      done: false
+      done: false,
+      checkbox: ["1", "2", "3", "4", "5", "6", "7"],
+      radio: ["assets/carrot.png", "assets/heart.png", "assets/cleaning.png", "assets/pet-food.png", "assets/piggy-bank.png", "assets/leaf.png", "assets/pint.png", "assets/strong.png"]
     }
   }
 
@@ -41,26 +45,54 @@ render() {
       <h1>I will...</h1>
       <form onSubmit={this.handleSubmit}>
         <input className="input-value" type="text" placeholder="Write a new habit here!" value={this.state.newToDoItem} onChange={this.newItem} onKeyPress={this.newItem} />
+
         <p className="form-copy">For how many times a week?</p>
         <div className="task-amount">
-          <h6 className="day">1</h6>
-          <h6 className="day">2</h6>
-          <h6 className="day">3</h6>
-          <h6 className="day">4</h6>
-          <h6 className="day">5</h6>
-          <h6 className="day">6</h6>
-          <h6 className="day">7</h6>
+          {this.state.checkbox.map(checkbox => (
+            <TimesWeek
+              day={checkbox} />
+          ))}
         </div>
+
         <p>Add a cool icon</p>
         <div className="icon-container">
-          <img className="habiticon" src={carrot} alt="" />
-          <img className="habiticon" src={heart} alt="" />
-          <img className="habiticon" src={cleaning} alt="" />
-          <img className="habiticon" src={leaf} alt="" />
-          <img className="habiticon" src={petfood} alt="" />
-          <img className="habiticon" src={piggybank} alt="" />
-          <img className="habiticon" src={pint} alt="" />
-          <img className="habiticon" src={strong} alt="" />
+          {this.state.radio.map(radio => (
+            <ChooseIcon
+              img={radio} />
+          ))}
+
+          {/* <label className="radiolabel">
+            <input className="radioinput" type="radio" name="icon" value="small" />
+            <img className="habiticon" src={carrot} alt="" />
+          </label>
+          <label className="radiolabel">
+            <input className="radioinput" type="radio" name="icon" value="small" />
+            <img className="habiticon" src={heart} alt="" />
+          </label>
+          <label className="radiolabel">
+            <input className="radioinput" type="radio" name="icon" value="small" />
+            <img className="habiticon" src={cleaning} alt="" />
+          </label>
+          <label className="radiolabel">
+            <input className="radioinput" type="radio" name="icon" value="small" />
+            <img className="habiticon" src={leaf} alt="" />
+          </label>
+          <label className="radiolabel">
+            <input className="radioinput" type="radio" name="icon" value="small" />
+            <img className="habiticon" src={petfood} alt="" />
+          </label>
+          <label className="radiolabel">
+            <input className="radioinput" type="radio" name="icon" value="small" />
+            <img className="habiticon" src={piggybank} alt="" />
+          </label>
+          <label className="radiolabel">
+            <input className="radioinput" type="radio" name="icon" value="small" />
+            <img className="habiticon" src={pint} alt="" />
+          </label>
+          <label className="radiolabel">
+            <input className="radioinput" type="radio" name="icon" value="small" />
+            <img className="habiticon" src={strong} alt="" />
+          </label> */}
         </div>
         <div className="submit-container"><input className="btn submit" type="submit" value="Save habit" /></div>
       </form>
