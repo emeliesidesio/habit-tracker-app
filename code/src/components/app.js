@@ -18,8 +18,11 @@ class App extends React.Component {
     }
   }
 
-   addItem = item => {
+   addItem = (item, done, times, radio) => {
      console.log("got a new item", item)
+     console.log("it is done?", done)
+     console.log("I shall do it how many times? ", times)
+     console.log("I want the logo ", radio)
      this.setState({
        toDoItems: [...this.state.toDoItems, item]
      }, () => {
