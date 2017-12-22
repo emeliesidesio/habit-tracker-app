@@ -16,15 +16,29 @@ import TimesWeek from "components/form/timesweek"
 import "./form.css"
 
 const radio = [carrot, heart, cleaning, petfood, piggybank, luggage, balloons, strong, pint, tickets, star, leaf]
-const checkbox = ["1", "2", "3", "4", "5", "6", "7"]
+const times = ["1", "2", "3", "4", "5", "6", "7"]
 
 export default class Form extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       newToDoItem: "",
-      done: false
+      done: false,
+      timesAWeek: "",
+      chooseIcon: ""
     }
+  }
+
+  number = newTimes => {
+    this.setState({
+      timesAWeek: newTimes
+    })
+  }
+
+  symbol = newIcon => {
+    this.setState({
+      chooseIcon: newIcon
+    })
   }
 
   newItem = event => {
@@ -35,9 +49,9 @@ export default class Form extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    if (this.state.newToDoItem !== "") {
+    if (this.state.newToDoItem !== "" && this.state.chooseIcon !== "" && this.state.timesAWeek !== "") {
       console.log("A task was submitted:", this.state.newToDoItem)
-      this.props.addItemToList(this.state.newToDoItem, this.state.done)
+      this.props.addItemToList(this.state.newToDoItem, this.state.done, this.state.timesAWeek, this.state.chooseIcon)
       this.setState({
         newToDoItem: ""
       })
@@ -53,9 +67,10 @@ export default class Form extends React.Component {
 
           <p className="form-copy">For how many times a week?</p>
           <div className="task-amount">
-            {checkbox.map(amount => (
+            {times.map(amount => (
               <TimesWeek
-                day={amount} />
+                day={amount}
+                setTime={this.number} />
             ))}
           </div>
 
@@ -63,7 +78,8 @@ export default class Form extends React.Component {
           <div className="icon-container">
             {radio.map(icon => (
               <ChooseIcon
-                habitIcon={icon} />
+                habitIcon={icon}
+                setIcon={this.symbol} />
             ))}
 
           </div>

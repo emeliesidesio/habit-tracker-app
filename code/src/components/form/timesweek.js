@@ -1,10 +1,27 @@
 import React from "react"
 
 export default class TimesWeek extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      times: ""
+    }
+  }
+
+  number = event => {
+    this.setState({
+      times: event.target.value
+    }, () => {
+      console.log("a number is choosen", this.state.times)
+      this.props.setTime(this.state.times)
+    })
+  }
+
   render() {
     return (
       <label className="checklabel">
-        <input className="checkinput" type="checkbox" name="amount" value="small" />
+        <input className="checkinput" type="radio" name="amount" onChange={this.number} value={this.props.day} />
         <h6 className="day">{this.props.day}</h6>
       </label>
     )
