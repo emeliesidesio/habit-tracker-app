@@ -2,7 +2,7 @@ import React from "react"
 import Form from "components/form/form.js"
 import Item from "components/item/item.js"
 import Header from "components/header/header.js"
-import Calendar from "components/header/header.js"
+import Calendar from "components/calendar/calendar.js"
 import List from "components/list/list"
 
 class App extends React.Component {
