@@ -1,6 +1,8 @@
 import React from "react"
 import "./calendar.css"
 
+const today = new Date()
+
 export default class Calendar extends React.Component {
 
   constructor(props) {
@@ -13,6 +15,7 @@ export default class Calendar extends React.Component {
     return (
       <div className="calendarPage">
         Här ska det komma en kalender
+        {today.toLocaleString()}
       </div>
     )
   }
