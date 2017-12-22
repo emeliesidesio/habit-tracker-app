@@ -1,6 +1,6 @@
 import React from "react"
-import "./list.css"
 import Item from "components/item/item"
+import "./list.css"
 
 export default class List extends React.Component {
 
