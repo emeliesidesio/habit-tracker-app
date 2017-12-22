@@ -1,0 +1,21 @@
+.calendarSquare {
+  font-size: 10px;
+  height: 10%;
+  background-color: white;
+  display: inline;
+}
+.weekWrapper {
+width: 150px;
+background-color: white;
+}
+.weekDay {
+  display: inline;
+}
+.calendarWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendarBox {
+
+}
