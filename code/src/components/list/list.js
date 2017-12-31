@@ -10,6 +10,7 @@ export default class List extends React.Component {
         {this.props.toDoItems.map(toDoItems => (
           <Item
             key={toDoItems.id}
+            id={toDoItems.id}
             toDoitem={toDoItems.value}
             clickedCheckbox={this.checkItem}
             removeItem={this.removeItem} />

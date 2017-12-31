@@ -23,28 +23,29 @@ export default class Item extends React.Component {
 
  render() {
    return (
-     <div className="Items">
-     <div className="item-circle">
-       <div className="item-plus">
-       +
-       </div>
-    </div>
+    //  <div className="Items">
+    //  <div className="item-circle">
+    //    <div className="item-plus">
+    //    +
+    //    </div>
+    // </div>
 
-       {/* <div className="item-circle">
+       <div className="item-circle">
 
-       <label className="done-circle" htmlFor="done-circle"><span className="checkbox">&#x2713;</span></label>
-
+       <div className="done-circle-checked">
        <input
          id="done-circle"
-         className="done-circle-checked"
          type="checkbox" />
-         checked={this.state.done}
-         onChange={this.handleCheck} />
+         {/* // checked={this.state.done}
+         // onChange={this.handleCheck} /> */}
+         {/* <span className="checkmark"></span> */}
+        <label for="done-circle"></label>
+      </div>
        {this.props.toDoitem}
        <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
        <h2>Habit</h2>
-     </div> */}
      </div>
+     // </div>
    )
  }
 
