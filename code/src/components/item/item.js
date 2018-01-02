@@ -35,14 +35,17 @@ export default class Item extends React.Component {
         <Link to={`/form/${this.props.id}`}>
           <div className="Items">
             <div className="item-circle" onClick={this.handlePlusClick}>
-              <div className="item-plus">+</div>
+              <div className="item-plus">
+                +
+              </div>
             </div>
           </div>
         </Link>}
 
         {this.props.toDoItem !== "+" &&
         <div className="item-circle-icon" style={{ backgroundImage: `url(${this.props.radio})` }}>
-
+          <div className="red-circle">
+        </div>
           <div className="done-circle-checked">
             <input
               id="done-circle"
@@ -55,7 +58,7 @@ export default class Item extends React.Component {
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
           <div className="item-title">
             <h2>testar</h2>
-          </div>
+            </div>
         </div>}
       </div>
     )

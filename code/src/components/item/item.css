@@ -29,6 +29,15 @@
   background-color: #fff;
 }
 
+.red-circle{
+  position: relative;
+  width:90px;
+  height: 00px;
+  border-radius: 50%;
+  background-color: red;
+  z-index: 50;
+}
+
 .item-title{
   display: block;
 }
