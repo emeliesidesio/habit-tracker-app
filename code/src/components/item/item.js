@@ -26,17 +26,16 @@ export default class Item extends React.Component {
    return (
 
      <div>
-       {this.props.value === "+" &&
+       {this.props.toDoItem === "+" &&
        <div className="Items">
          <Link to="/form">
            <div className="item-circle">
              <div className="item-plus">+</div>
            </div>
-          </Link>
-     </div>}
+         </Link>
+       </div>}
 
-
-       {/* {this.props.value !== "+" &&
+       {this.props.toDoItem !== "+" &&
        <div className="item-circle">
 
          <div className="done-circle-checked">
@@ -53,7 +52,7 @@ export default class Item extends React.Component {
          <div className="item-title">
            <h2>testar</h2>
          </div>
-       </div>} */}
+       </div>}
 
      </div>
 
