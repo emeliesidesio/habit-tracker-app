@@ -36,7 +36,7 @@ export default class Item extends React.Component {
        </div>}
 
        {this.props.toDoItem !== "+" &&
-       <div className="item-circle">
+       <div className="item-circle" style={{ backgroundImage: `url{this.props.}}}>
 
          <div className="done-circle-checked">
            <input

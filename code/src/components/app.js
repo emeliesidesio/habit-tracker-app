@@ -63,7 +63,9 @@ class App extends React.Component {
               render={routeProps =>
                 <List
                   {...routeProps}
-                  toDoItems={this.state.toDoItems} />
+                  toDoItems={this.state.toDoItems}
+                  checkItem={this.state.checkItem}
+                  removeItem={this.state.removeItem} />
               } />
           </div>
           <Route
