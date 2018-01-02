@@ -84,7 +84,7 @@ export default class Form extends React.Component {
             ))}
 
           </div>
-          <Link to="/"><div className="submit-container"><input className="btn submit" type="submit" value="Save habit" /></div></Link>
+          <div className="submit-container"><Link to="/"><input className="btn submit" type="submit" value="Save habit" /></Link></div>
         </form>
       </div>
     )
