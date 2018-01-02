@@ -36,7 +36,7 @@ export default class Item extends React.Component {
        </div>}
 
        {this.props.toDoItem !== "+" &&
-       <div className="item-circle" style={{ backgroundImage: `url{this.props.}}}>
+       <div className="item-circle">
 
          <div className="done-circle-checked">
            <input
@@ -47,13 +47,11 @@ export default class Item extends React.Component {
            <span className="checkmark" />
            <label htmlFor="done-circle" />
          </div>
-         {this.props.toDoitem}
          <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
          <div className="item-title">
            <h2>testar</h2>
          </div>
        </div>}
-
      </div>
 
    )
