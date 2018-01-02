@@ -1,4 +1,5 @@
 import React from "react"
+// import { Link } from "react-router-dom"
 import "./item.css"
 
 export default class Item extends React.Component {
@@ -13,7 +14,7 @@ export default class Item extends React.Component {
    this.setState({
      done: !this.state.done
    }, () => {
-     this.props.clickedCheckbox(this.props.toDoitem, this.state.done)
+     this.props.checkItem(this.props.toDoitem, this.state.done)
    })
  }
 
@@ -23,30 +24,37 @@ export default class Item extends React.Component {
 
  render() {
    return (
-    //  <div className="Items">
-    //  <div className="item-circle">
-    //    <div className="item-plus">
-    //    +
-    //    </div>
-    // </div>
+     <div>
+       {/* {this.props.toDoItems.value === "+" &&
+     <div className="Items">
+       <Link to="/List" className="item-circle">
+         <div className="item-plus">
+         +
+         </div>
+       </Link>
+     </div>} */}
 
+       {this.props.value !== "+" &&
        <div className="item-circle">
 
-       <div className="done-circle-checked">
-       <input
-         id="done-circle"
-         type="checkbox" />
-         {/* // checked={this.state.done}
-         // onChange={this.handleCheck} /> */}
-         {/* <span className="checkmark"></span> */}
-        <label for="done-circle"></label>
-      </div>
-       {this.props.toDoitem}
-       <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
-       <h2>Habit</h2>
+         <div className="done-circle-checked">
+           <input
+             id="done-circle"
+             type="checkbox"
+             checked={this.state.done}
+             onChange={this.handleCheck} />
+           <span className="checkmark" />
+           <label htmlFor="done-circle" />
+         </div>
+         {/* {this.props.toDoitem} */}
+         <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
+         <div className="item-title">
+           <h2>testar</h2>
+         </div>
+       </div>}
+
      </div>
-     // </div>
+
    )
  }
-
 }

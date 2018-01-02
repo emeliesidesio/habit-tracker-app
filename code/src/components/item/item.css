@@ -20,6 +20,10 @@
   background-color: #fff;
 }
 
+.item-title{
+  display: block;
+}
+
 /*start checkboxstyling*/
 
 /*create new checkbox*/
