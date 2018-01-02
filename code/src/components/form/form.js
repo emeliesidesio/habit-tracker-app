@@ -43,6 +43,10 @@ export default class Form extends React.Component {
     })
   }
 
+  componentDidMount() {
+    console.log("This is the id", this.props.match.params.id)
+  }
+
   newItem = event => {
     this.setState({
       newToDoItem: event.target.value

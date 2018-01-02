@@ -56,8 +56,7 @@ class App extends React.Component {
         <div className="app-container">
           <Header />
           <Route
-            exact
-            path="/form"
+            path="/form/:id"
             render={routeProps =>
               <Form
                 {...routeProps}

@@ -1,5 +1,5 @@
 import React from "react"
-import { Redirect } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./item.css"
 
 export default class Item extends React.Component {
@@ -32,11 +32,13 @@ export default class Item extends React.Component {
 
       <div>
         {this.props.toDoItem === "+" &&
-        <div className="Items">
-          <div className="item-circle" onClick={this.handlePlusClick} >
-            <div className="item-plus">+</div>
+        <Link to={`/form/${this.props.id}`}>
+          <div className="Items">
+            <div className="item-circle" onClick={this.handlePlusClick}>
+              <div className="item-plus">+</div>
+            </div>
           </div>
-        </div>}
+        </Link>}
 
         {this.props.toDoItem !== "+" &&
         <div className="item-circle-icon" style={{ backgroundImage: `url(${this.props.radio})` }}>
