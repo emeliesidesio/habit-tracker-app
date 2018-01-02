@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      toDoItems: [{ id: 1, value: "+", checkedDates: ["2018-01-01", "2018-01-02"] }, { id: 2, value: "+" },
+      toDoItems: [{ id: 1, value: "+" }, { id: 2, value: "+" },
         { id: 3, value: "+" }, { id: 4, value: "+" },
         { id: 5, value: "+" }, { id: 6, value: "+" },
         { id: 7, value: "+" }, { id: 8, value: "+" }
@@ -42,6 +42,7 @@ class App extends React.Component {
     })
   }
 
+<<<<<<< HEAD
   render() {
     return (
       <BrowserRouter>
@@ -71,6 +72,24 @@ class App extends React.Component {
       </BrowserRouter>
     )
   }
+=======
+   render() {
+     return (
+       <div className="app-container">
+         {/* <Item /> */}
+         <Header />
+         <Form addItemToList={this.addItem} />
+         <div className="ItemsList">
+           <List
+             toDoItems={this.state.toDoItems}
+             checkItem={this.state.checkItem}
+             removeItem={this.state.removeItem} />
+         </div>
+         <Calendar />
+       </div>
+     )
+   }
+>>>>>>> parent of 51d3372... calendar work
 }
 
 export default App

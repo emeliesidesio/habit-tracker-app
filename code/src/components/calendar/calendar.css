@@ -1,52 +1,21 @@
-/* .calendarSquare {
+.calendarSquare {
   font-size: 10px;
   height: 10%;
   background-color: white;
   display: inline;
-} */
-
-.calendarWrapper {
-  width: 100%;
-  background-color: white;
-  font-size: 24px;
 }
-
-.calendarHeaderRow {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
 .weekWrapper {
-  width: 100%;
-  background-color: white;
+width: 150px;
+background-color: white;
 }
-
 .weekDay {
-  background-color: pink;
   display: inline;
-  width: 40px;
 }
-
-.calendarLine {
+.calendarWrapper {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-}
-
-.calendarLineRight {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.taskInfo {
-  width: 40px;
 }
 
 .calendarBox {
-  background-color: yellow;
-  display: inline;
-  width: 40px;
-  font-size: 10px;
+
 }
