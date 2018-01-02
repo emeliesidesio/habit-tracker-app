@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import "./item.css"
 
 export default class Item extends React.Component {
@@ -23,12 +24,13 @@ export default class Item extends React.Component {
 
  render() {
    return (
-    //  <div className="Items">
-    //  <div className="item-circle">
-    //    <div className="item-plus">
-    //    +
-    //    </div>
-    // </div>
+     <div className="Items">
+
+       <Link to="/form">
+         <div className="item-circle">
+           <div className="item-plus">+</div>
+         </div>
+       </Link>
 
        <div className="item-circle">
 
