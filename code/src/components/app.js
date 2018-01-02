@@ -42,7 +42,6 @@ class App extends React.Component {
     })
   }
 
-<<<<<<< HEAD
   render() {
     return (
       <BrowserRouter>
@@ -72,24 +71,6 @@ class App extends React.Component {
       </BrowserRouter>
     )
   }
-=======
-   render() {
-     return (
-       <div className="app-container">
-         {/* <Item /> */}
-         <Header />
-         <Form addItemToList={this.addItem} />
-         <div className="ItemsList">
-           <List
-             toDoItems={this.state.toDoItems}
-             checkItem={this.state.checkItem}
-             removeItem={this.state.removeItem} />
-         </div>
-         <Calendar />
-       </div>
-     )
-   }
->>>>>>> parent of 51d3372... calendar work
 }
 
 export default App
