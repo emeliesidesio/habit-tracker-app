@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      toDoItems: [{ id: 1, value: "+" }, { id: 2, value: "+" },
+      toDoItems: [{ id: 1, value: "+", checkedDates: ["2018-01-01", "2018-01-02"] }, { id: 2, value: "+" },
         { id: 3, value: "+" }, { id: 4, value: "+" },
         { id: 5, value: "+" }, { id: 6, value: "+" },
         { id: 7, value: "+" }, { i: 8, value: "+" }
@@ -53,7 +53,8 @@ class App extends React.Component {
              checkItem={this.state.checkItem}
              removeItem={this.state.removeItem} />
          </div>
-         <Calendar />
+         <Calendar
+           toDoItems={this.state.toDoItems} />
        </div>
      )
    }
