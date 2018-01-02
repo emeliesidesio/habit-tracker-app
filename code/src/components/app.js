@@ -25,8 +25,19 @@ class App extends React.Component {
     console.log("it is done?", done)
     console.log("I shall do it how many times? ", times)
     console.log("I want the logo ", radio)
+    console.log("got a new index in array", parseInt(id)-1)
+
+    const allItems = this.state.toDoItems
+    allItems[parseInt(id)-1] = {
+      id: id,
+      value: item,
+      checked: done,
+      times: times,
+      symbol: radio
+    }
+
     this.setState({
-      toDoItems: [...this.state.toDoItems, item]
+      toDoItems: allItems
     }, () => {
       console.log("The items are: ", this.state.toDoItems)
     })
