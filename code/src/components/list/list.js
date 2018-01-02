@@ -6,7 +6,7 @@ export default class List extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="list-container">
         {this.props.toDoItems.map(toDoItems => (
           <Item
             key={toDoItems.id}
