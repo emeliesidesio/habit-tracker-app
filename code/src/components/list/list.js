@@ -12,7 +12,7 @@ export default class List extends React.Component {
             key={toDoItems.id}
             id={toDoItems.id}
             toDoItem={toDoItems.value}
-            clickedCheckbox={this.checkItem}
+            checkItem={this.checkItem}
             removeItem={this.removeItem} />
         ))}
       </div>
