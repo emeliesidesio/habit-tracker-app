@@ -49,7 +49,9 @@ class App extends React.Component {
          <Form addItemToList={this.addItem} />
          <div className="ItemsList">
            <List
-             toDoItems={this.state.toDoItems} />
+             toDoItems={this.state.toDoItems}
+             checkItem={this.state.checkItem}
+             removeItem={this.state.removeItem} />
          </div>
          <Calendar />
        </div>

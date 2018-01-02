@@ -11,7 +11,7 @@ export default class List extends React.Component {
           <Item
             key={toDoItems.id}
             id={toDoItems.id}
-            toDoitem={toDoItems.value}
+            toDoItem={toDoItems.value}
             clickedCheckbox={this.checkItem}
             removeItem={this.removeItem} />
         ))}
