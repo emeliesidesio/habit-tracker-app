@@ -27,34 +27,47 @@ export default class Calendar extends React.Component {
   render() {
     return (
       <div className="calendarPage">
-        Här ska det komma en kalender
-        {momentToday}
+        {/* {momentToday}
         Nästa datum är
         {today.toLocaleString()}
+        {today.toLocaleString()} */}
 
         {/* <div>
           {daysInMonth.map(date => (
+@ -42,19 +41,35 @@ export default class Calendar extends React.Component {
             <div className="calenderSquare">{date}</div>
           ))}
         </div> */}
-        {/* <div>
-          {daysInWeek.map(date => (
-            <div className="calenderSquare">{date}</div>
-          ))}
-        </div> */}
+         {/* {this.props.toDoItems[0].checkedDates} */}
+        <div className="calendarWrapper">
+          <div className="calendarHeaderRow">
+            <div className="taskInfo">!</div>
+            <div className="weekDay">M</div>
+            <div className="weekDay">T</div>
+            <div className="weekDay">W</div>
+            <div className="weekDay">T</div>
+            <div className="weekDay">F</div>
+            <div className="weekDay">S</div>
+            <div className="weekDay">S</div>
+          </div>
 
-        Här kommer Hildas funktion
-        <div className="weekWrapper">
-          <div className="weekDay">M</div><div className="weekDay">T</div><div className="weekDay">W</div><div className="weekDay">T</div>
-          <div className="weekDay"></div>F<div className="weekDay"></div>S<div className="weekDay"></div>S<div className="weekDay"></div>
-
-          <div className="calendarWrapper">
-            {daysInWeek.map(date => (
+          <div className="weekWrapper">
+            {this.props.toDoItems.map(item => (
+              <CalendarDays
+                id={item.id}
+                key={item.id}
+                // checkedDates={item.checkedDates}
+                kryss="o"
+                daysInWeek={daysInWeek}
+              />
+            ))}
+            {/* {daysInWeek.map(date => (
               <CalendarDays
                 dates={date}
                 kryss="hej"
               />
             ))}
+            ))} */}
           </div>
         </div>
       </div>
