@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "react-router-dom"
 import carrot from "assets/carrot.png"
 import heart from "assets/heart.png"
 import cleaning from "assets/cleaning.png"
@@ -83,7 +84,7 @@ export default class Form extends React.Component {
             ))}
 
           </div>
-          <div className="submit-container"><input className="btn submit" type="submit" value="Save habit" /></div>
+          <Link to="/"><div className="submit-container"><input className="btn submit" type="submit" value="Save habit" /></div></Link>
         </form>
       </div>
     )

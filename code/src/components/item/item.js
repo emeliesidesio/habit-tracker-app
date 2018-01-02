@@ -1,5 +1,5 @@
 import React from "react"
-// import { Link } from "react-router-dom"
+import { Link } from "react-router-dom"
 import "./item.css"
 
 export default class Item extends React.Component {
@@ -24,15 +24,17 @@ export default class Item extends React.Component {
 
  render() {
    return (
+
      <div>
-       {/* {this.props.toDoItems.value === "+" &&
-     <div className="Items">
-       <Link to="/List" className="item-circle">
-         <div className="item-plus">
-         +
-         </div>
-       </Link>
-     </div>} */}
+       {this.props.toDoItems.value === "+" &&
+       <div className="Items">
+         <Link to="/form">
+           <div className="item-circle">
+             <div className="item-plus">+</div>
+           </div>
+          </Link>
+     </div>}
+
 
        {this.props.value !== "+" &&
        <div className="item-circle">
