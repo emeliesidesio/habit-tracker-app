@@ -20,6 +20,7 @@ class App extends React.Component {
   }
 
   addItem = (id, item, done, times, radio) => {
+    console.log("got a new id", id)
     console.log("got a new item", item)
     console.log("it is done?", done)
     console.log("I shall do it how many times? ", times)
