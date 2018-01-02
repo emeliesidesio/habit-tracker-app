@@ -65,7 +65,8 @@ class App extends React.Component {
                   {...routeProps}
                   toDoItems={this.state.toDoItems}
                   checkItem={this.state.checkItem}
-                  removeItem={this.state.removeItem} />
+                  removeItem={this.state.removeItem}
+                  radio={this.state.radio} />
               } />
           </div>
           <Route

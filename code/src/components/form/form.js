@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import carrot from "assets/carrot.png"
 import heart from "assets/heart.png"
 import cleaning from "assets/cleaning.png"
@@ -26,7 +26,8 @@ export default class Form extends React.Component {
       newToDoItem: "",
       done: false,
       timesAWeek: "",
-      chooseIcon: ""
+      chooseIcon: "",
+      complete: false
     }
   }
 
@@ -54,7 +55,8 @@ export default class Form extends React.Component {
       console.log("A task was submitted:", this.state.newToDoItem)
       this.props.addItemToList(this.state.newToDoItem, this.state.done, this.state.timesAWeek, this.state.chooseIcon)
       this.setState({
-        newToDoItem: ""
+        newToDoItem: "",
+        complete: true
       })
     }
   }
@@ -62,6 +64,7 @@ export default class Form extends React.Component {
   render() {
     return (
       <div className="form-container">
+        {this.state.complete && <Redirect to="/" />}
         <h1>I will...</h1>
         <form onSubmit={this.handleSubmit}>
           <input className="input-value" type="text" placeholder="Write a new habit here!" value={this.state.newToDoItem} onChange={this.newItem} onKeyPress={this.newItem} />
@@ -84,7 +87,9 @@ export default class Form extends React.Component {
             ))}
 
           </div>
-          <div className="submit-container"><Link to="/"><input className="btn submit" type="submit" value="Save habit" /></Link></div>
+          <div className="submit-container">
+            <input className="btn submit" type="submit" value="Save habit" />
+          </div>
         </form>
       </div>
     )

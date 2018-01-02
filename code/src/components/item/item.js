@@ -36,7 +36,7 @@ export default class Item extends React.Component {
        </div>}
 
        {this.props.toDoItem !== "+" &&
-       <div className="item-circle">
+       <div className="item-circle-icon" style={{ backgroundImage: `url(${this.props.radio})` }}>
 
          <div className="done-circle-checked">
            <input
