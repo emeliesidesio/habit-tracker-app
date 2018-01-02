@@ -56,7 +56,7 @@ export default class Calendar extends React.Component {
               <CalendarDays
                 id={item.id}
                 key={item.id}
-                // checkedDates={item.checkedDates}
+                checkedDates={item.checkedDates}
                 kryss="o"
                 daysInWeek={daysInWeek}
               />
