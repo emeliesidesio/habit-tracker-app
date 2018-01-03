@@ -12,6 +12,12 @@ const mtwtfss = ["M", "T", "W", "T", "F", "S", "S"]
 export default class Calendar extends React.Component {
 
   render() {
+    let nonEmptyItems = this.props.toDoItems.filter(todo => todo.value !== "+")
+    console.log("ej tomma objekt", nonEmptyItems)
+    if (nonEmptyItems.length < 1) {
+      nonEmptyItems = this.props.toDoItems
+    }
+
     return (
       <div className="calendarPage">
         <div className="calendarWrapper">
@@ -27,7 +33,7 @@ export default class Calendar extends React.Component {
           </div>
 
           <div className="weekWrapper">
-            {this.props.toDoItems.map(item => (
+            {nonEmptyItems.map(item => (
               <CalendarDays
                 id={item.id}
                 key={item.id}
