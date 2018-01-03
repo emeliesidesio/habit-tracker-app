@@ -14,12 +14,12 @@ export default class Item extends React.Component {
     this.setState({
       done: !this.state.done
     }, () => {
-      this.props.checkItem(this.props.toDoitem, this.state.done)
+      this.props.checkItem(this.props.value, this.state.done)
     })
   }
 
   handleRemoveClick = () => {
-    this.props.removeItem(this.props.toDoitem)
+    this.props.removeItem(this.props.id)
   }
 
   handlePlusClick = () => {

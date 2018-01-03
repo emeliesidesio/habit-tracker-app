@@ -66,9 +66,23 @@ class App extends React.Component {
     console.log("this item is done?", done)
   }
 
-  removeItem = item => {
+  removeItem = id => {
+    console.log("got a new index in array", (id)-1)
+
+    const allItems = this.state.toDoItems
+    allItems[parseInt(id)-1] = {
+      id: id,
+      value: "+",
+      checked: false,
+      times: "",
+      symbol: "",
+      checkedDates: []
+    }
+
     this.setState({
-      toDoItems: this.state.toDoItems.filter(todo => todo !== item)
+      toDoItems: allItems
+    }, () => {
+      console.log("The items are: ", this.state.toDoItems)
     })
   }
 
@@ -93,7 +107,7 @@ class App extends React.Component {
                   {...routeProps}
                   toDoItems={this.state.toDoItems}
                   value={this.state.value}
-                  checkItem={this.state.checkItem}
+                  checkItem={this.checkItem}
                   removeItem={this.removeItem}
                   symbol={this.state.symbol}
                   lastClickedId={this.changeLastClickedId} />
