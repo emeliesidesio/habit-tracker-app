@@ -17,12 +17,13 @@ export default class Calendar extends React.Component {
         <div className="calendarWrapper">
           <div className="calendarHeaderRow">
 
-            <div className="taskInfo">!</div>
+            <div className="taskInfo" />
 
-            {mtwtfss.map(day => (
-              <div className="weekDay">{day}</div>
-            ))}
-
+            <div className="calendarHeaderRowRight">
+              {mtwtfss.map(day => (
+                <div className="weekDay">{day}</div>
+              ))}
+            </div>
           </div>
 
           <div className="weekWrapper">
@@ -31,6 +32,7 @@ export default class Calendar extends React.Component {
                 id={item.id}
                 key={item.id}
                 symbol={item.symbol}
+                times={item.times}
                 checkedDates={item.checkedDates}
                 daysInWeek={daysInWeek} />
             ))}

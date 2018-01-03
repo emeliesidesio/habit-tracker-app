@@ -1,33 +1,46 @@
-
+.calendarPage {
+  margin-top: 20%;
+  }
 
 .calendarWrapper {
   width: 100%;
-  background-color: white;
-  font-size: 24px;
 }
 
 .calendarHeaderRow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  text-align: center;
+}
+
+.calendarHeaderRowRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .weekWrapper {
   width: 100%;
-  background-color: white;
 }
 
 .weekDay {
-  background-color: pink;
-  display: inline;
-  width: 40px;
+  margin: 2px;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: white;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
 }
 
 .calendarLine {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-bottom: 1px solid white;
 }
 
 .calendarLineRight {
@@ -37,13 +50,29 @@
 }
 
 .taskInfo {
-  width: 40px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  width: 38px;
+  height: 38px;
+}
+
+.taskInfo img {
+  width: 12px;
+  height: 12px;
 }
 
 .calendarBox {
-  text-align: center;
-  background-color: yellow;
-  display: inline;
-  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  margin: 2px;
   font-size: 10px;
+}
+
+.calendarBox img{
+  width: 25px;
+  height: 25px;
 }

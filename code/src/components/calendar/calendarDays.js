@@ -24,6 +24,7 @@ export default class Calendar extends React.Component {
         weekMatches: isMatch
       })
       console.log("State dates", isMatch)
+      console.log("Counter", this.state.matchCount)
     }
   }
 
@@ -31,7 +32,12 @@ export default class Calendar extends React.Component {
     return (
       <div className="calendarLine">
         <div className="taskInfo">
-          {this.props.id}
+          {this.props.symbol &&
+            <img src={this.props.symbol} alt="" />
+          }
+          {this.props.times > 0 &&
+            <div className="jknf">x{this.props.times}</div>
+          }
         </div>
 
         <div className="calendarLineRight">
