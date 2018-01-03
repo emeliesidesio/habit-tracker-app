@@ -43,9 +43,9 @@ export default class Item extends React.Component {
         </Link>}
 
         {this.props.toDoItem !== "+" &&
-        <div className="item-circle-icon" style={{ backgroundImage: `url(${this.props.radio})` }}>
+        <div className="item-circle-icon" style={{ backgroundImage: `url(${this.props.symbol})` }}>
           <div className="red-circle">
-        </div>
+          </div>
           <div className="done-circle-checked">
             <input
               id="done-circle"
@@ -56,7 +56,7 @@ export default class Item extends React.Component {
             <label htmlFor="done-circle" />
           </div>
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
-          <div className="item-title">
+          <div className="item-title" style={{ backgroundImage: `url(${this.props.symbol})` }}>
             <h2>testar</h2>
             </div>
         </div>}

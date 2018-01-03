@@ -35,7 +35,7 @@ class App extends React.Component {
     console.log("it is done?", done)
     console.log("I shall do it how many times? ", times)
     console.log("I want the logo ", radio)
-    console.log("got a new index in array", parseInt(id)-1)
+    console.log("got a new index in array", (id)-1)
 
     const allItems = this.state.toDoItems
     allItems[parseInt(id)-1] = {
@@ -94,8 +94,8 @@ class App extends React.Component {
                   toDoItems={this.state.toDoItems}
                   checkItem={this.state.checkItem}
                   removeItem={this.removeItem}
-                  lastClickedId={this.changeLastClickedId}
-                  radio={this.radio} />
+                  symbol={this.state.symbol}
+                  lastClickedId={this.changeLastClickedId} />
               } />
           </div>
           <Route
