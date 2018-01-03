@@ -81,10 +81,6 @@ class App extends React.Component {
   //   // ta bort dagens datum ur checkedDates
   // }
 
-  this.setState(prevState => ({
-  arrayvar: [...prevState.arrayvar, newelement]
-}))
-
   removeItem = id => {
     console.log("got a new index in array", (id)-1)
 
