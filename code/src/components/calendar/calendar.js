@@ -32,7 +32,6 @@ export default class Calendar extends React.Component {
                 key={item.id}
                 symbol={item.symbol}
                 checkedDates={item.checkedDates}
-                kryss="o"
                 daysInWeek={daysInWeek} />
             ))}
           </div>

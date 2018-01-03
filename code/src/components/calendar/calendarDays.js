@@ -38,7 +38,7 @@ export default class Calendar extends React.Component {
           {this.state.weekMatches.map(day => (
             <div className="calendarBox">
               {day !== undefined &&
-                <div>you did it! {this.props.id}</div>
+                <img src={this.props.symbol} alt="" />
               }
             </div>
           ))}
