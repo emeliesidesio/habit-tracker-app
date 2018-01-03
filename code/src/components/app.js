@@ -24,21 +24,15 @@ class App extends React.Component {
         { id: 3, value: "+" }, { id: 4, value: "+", checkedDates: ["2018-01-03", "2018-01-06"] },
         { id: 5, value: "+" }, { id: 6, value: "+" },
         { id: 7, value: "+" }, { id: 8, value: "+" }
-      ],
-      lastClickedId: ""
+      ]
     }
   }
 
   addItem = (id, item, done, times, radio) => {
-    console.log("got a new id", id)
-    console.log("got a new item", item)
-    console.log("it is done?", done)
-    console.log("I shall do it how many times? ", times)
-    console.log("I want the logo ", radio)
-    console.log("got a new index in array", (id)-1)
+    console.log("got a new index in array", (id) - 1)
 
     const allItems = this.state.toDoItems
-    allItems[parseInt(id)-1] = {
+    allItems[parseInt(id, 10) - 1] = {
       id: id,
       value: item,
       checked: done,
@@ -49,15 +43,9 @@ class App extends React.Component {
     this.setState({
       toDoItems: allItems
     }, () => {
+      const jsonStringOfItems = JSON.stringify(this.state.toDoItems)
+      localStorage.toDoItems = jsonStringOfItems
       console.log("The items are: ", this.state.toDoItems)
-    })
-  }
-
-  changeLastClickedId = id => {
-    this.setState({
-      lastClickedId: id
-    }, () => {
-      console.log("Du har klickat på", this.state.lastClickedId)
     })
   }
 
@@ -67,10 +55,10 @@ class App extends React.Component {
   }
 
   removeItem = id => {
-    console.log("got a new index in array", (id)-1)
+    console.log("got a new index in array", (id) - 1)
 
     const allItems = this.state.toDoItems
-    allItems[parseInt(id)-1] = {
+    allItems[parseInt(id, 10) - 1] = {
       id: id,
       value: "+",
       checked: false,
@@ -107,7 +95,6 @@ class App extends React.Component {
                   {...routeProps}
                   toDoItems={this.state.toDoItems}
                   value={this.state.value}
-                  checkItem={this.checkItem}
                   removeItem={this.removeItem}
                   symbol={this.state.symbol}
                   lastClickedId={this.changeLastClickedId} />
