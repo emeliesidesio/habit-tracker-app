@@ -22,18 +22,13 @@ export default class Item extends React.Component {
     this.props.removeItem(this.props.id)
   }
 
-  handlePlusClick = () => {
-    console.log(this.props.id)
-    this.props.lastClickedId(this.props.id)
-  }
-
   render() {
     return (
 
       <div>
         {this.props.value === "+" &&
         <Link to={`/form/${this.props.id}`}>
-          <div className="item-circle" onClick={this.handlePlusClick}>
+          <div className="item-circle">
             <div className="item-plus">
               +
             </div>
@@ -50,7 +45,7 @@ export default class Item extends React.Component {
               checked={this.state.done}
               onChange={this.handleCheck} />
             <span className="checkmark" />
-            <label for="done-circle" />
+            <label htmlFor="done-circle" />
           </div>
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
           <div className="item-title">{this.props.value}</div>

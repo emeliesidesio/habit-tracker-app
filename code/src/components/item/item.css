@@ -118,6 +118,7 @@
   right: 0;
   bottom: 0;
   border: none;
+  cursor: pointer;
 }
 
 .remove-icon {
