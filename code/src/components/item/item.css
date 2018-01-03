@@ -1,4 +1,4 @@
-.item-plus{
+.item-plus {
   font-size: 100px;
   font-weight: 100;
   line-height: 95px;
@@ -6,7 +6,7 @@
   color: #000;
 }
 
-.item-circle{
+.item-circle {
   display: block;
   position: relative;
   width: 100px;
@@ -16,7 +16,7 @@
   margin: 15px;
 }
 
-.item-circle-icon{
+.item-circle-icon {
   position: relative;
   width: 100px;
   height: 100px;
@@ -25,7 +25,7 @@
   margin: 15px 15px 30px 15px;
 }
 
-.item-title{
+.item-title {
   position: absolute;
   text-align: center;
   top: 110px;
@@ -35,7 +35,7 @@
   height: 30px;
 }
 
-.symbol-circle{
+.symbol-circle {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -48,7 +48,7 @@
 
 /*create new checkbox*/
 
-.done-circle-checked{
+.done-circle-checked {
   height: 10px;
   width: 10px;
   position: relative;
@@ -92,6 +92,7 @@
 /**
  * Create the hover event of the tick
  */
+
 .done-circle-checked label:hover::after {
 	opacity: 0.7;
 }
@@ -99,14 +100,14 @@
 /**
  * Create the checkbox state for the tick
  */
+
 .done-circle-checked input[type=checkbox]:checked + label:after {
 	opacity: 1;
 }
 
 /*end checkboxstyling*/
 
-
-.remove{
+.remove {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -117,9 +118,9 @@
   border: none;
 }
 
-.remove-icon{
-  font-size: 45px;
+.remove-icon {
+  font-size: 50px;
   color: white;
   font-weight: 200;
-  line-height: 23px;
+  line-height: 28px;
 }

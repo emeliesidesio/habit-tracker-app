@@ -53,7 +53,7 @@ export default class Item extends React.Component {
             <label htmlFor="done-circle" />
           </div>
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
-            <div className="item-title">{this.props.value}</div>
+          <div className="item-title">{this.props.value}</div>
         </div>}
       </div>
     )
