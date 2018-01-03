@@ -13,6 +13,7 @@
   color: #000;
 }
 .item-circle{
+  display: block;
   position: relative;
   width: 110px;
   height: 110px;
@@ -29,13 +30,25 @@
   margin-bottom: 18px;
 }
 
+.item-title{
+  display: block;
+  position: absolute;
+  top: 105px;
+  color: #fff;
+  width: 110px;
+  height: 30px;
+  background-color: green;
+}
+
 .red-circle{
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width:90px;
-  height: 00px;
+  height: 90px;
   border-radius: 50%;
   background-color: red;
-  z-index: 50;
 }
 
 .item-title{
@@ -52,6 +65,7 @@
   position: relative;
   left: 2px;
   top: 5px;
+  z-index: 5px;
 }
 
 /**

@@ -92,6 +92,7 @@ class App extends React.Component {
                 <List
                   {...routeProps}
                   toDoItems={this.state.toDoItems}
+                  value={this.state.value}
                   checkItem={this.state.checkItem}
                   removeItem={this.removeItem}
                   symbol={this.state.symbol}
