@@ -31,21 +31,18 @@ export default class Item extends React.Component {
     return (
 
       <div>
-        {this.props.toDoItem === "+" &&
+        {this.props.value === "+" &&
         <Link to={`/form/${this.props.id}`}>
-          <div className="Items">
-            <div className="item-circle" onClick={this.handlePlusClick}>
-              <div className="item-plus">
-                +
-              </div>
+          <div className="item-circle" onClick={this.handlePlusClick}>
+            <div className="item-plus">
+              +
             </div>
           </div>
         </Link>}
 
-        {this.props.toDoItem !== "+" &&
+        {this.props.value !== "+" &&
         <div className="item-circle-icon">
-          <div className="red-circle" style={{ backgroundImage: `url(${this.props.symbol})` }}>
-          </div>
+          <img className="symbol-circle" src={this.props.symbol} alt="" />
           <div className="done-circle-checked">
             <input
               id="done-circle"
@@ -56,8 +53,7 @@ export default class Item extends React.Component {
             <label htmlFor="done-circle" />
           </div>
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
-          {/* <div className="item-title" style={{ backgroundImage: `url(${this.props.symbol})` }}> */}
-            <h2 className="item-title">testar{this.props.value}</h2>
+            <div className="item-title">{this.props.value}</div>
         </div>}
       </div>
     )
