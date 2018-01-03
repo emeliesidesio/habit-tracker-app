@@ -14,7 +14,7 @@ export default class Item extends React.Component {
     this.setState({
       done: !this.state.done
     }, () => {
-      this.props.checkItem(this.props.value, this.state.done)
+      this.props.checkItem(this.props.id, this.state.done)
     })
   }
 
@@ -50,7 +50,7 @@ export default class Item extends React.Component {
               checked={this.state.done}
               onChange={this.handleCheck} />
             <span className="checkmark" />
-            <label htmlFor="done-circle" />
+            <label htmlFor="done-circle"/>
           </div>
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
           <div className="item-title">{this.props.value}</div>

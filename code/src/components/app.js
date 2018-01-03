@@ -1,11 +1,13 @@
 import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
+import moment from "moment"
 import Form from "components/form/form.js"
 import Header from "components/header/header.js"
 import Calendar from "components/calendar/calendar.js"
 import List from "components/list/list"
 import carrot from "assets/carrot.png"
 
+const today = moment().format("YYYY-MM-DD")
 class App extends React.Component {
 
   constructor(props) {
@@ -61,10 +63,27 @@ class App extends React.Component {
     })
   }
 
-  checkItem = (item, done) => {
-    console.log("this item is finished", item)
-    console.log("this item is done?", done)
-  }
+  // checkItem = (id, done) => {
+  //   console.log("this item is finished", id)
+  //   console.log("this item is done?", done)
+  //   // Om checked = true
+  //   // vill ta dagens datum
+  //   console.log(today)
+  //   // lägga till datumet i state i checkedDates
+  //   const allItems = this.state.toDoItems
+  //   allItems[parseInt(id)-1].checkedDates = [...allItems[parseInt(id)-1].checkedDates, today]
+  //   this.setState({
+  //     toDoItems: allItems
+  //   }, () => {
+  //     console.log("The items are: ", this.state.toDoItems)
+  //   })
+  //   // Om checked = false
+  //   // ta bort dagens datum ur checkedDates
+  // }
+
+  this.setState(prevState => ({
+  arrayvar: [...prevState.arrayvar, newelement]
+}))
 
   removeItem = id => {
     console.log("got a new index in array", (id)-1)
