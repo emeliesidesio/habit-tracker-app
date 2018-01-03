@@ -2,8 +2,7 @@
   width: 110px;
   height: 110px;
   position: relative;
-
-  /*background-color: red;*/
+  margin-bottom: 18px;
 }
 
 .item-plus{
@@ -27,6 +26,7 @@
   height: 110px;
   border-radius: 50%;
   background-color: #fff;
+  margin-bottom: 18px;
 }
 
 .red-circle{
