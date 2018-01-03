@@ -4,14 +4,24 @@ import Form from "components/form/form.js"
 import Header from "components/header/header.js"
 import Calendar from "components/calendar/calendar.js"
 import List from "components/list/list"
+import carrot from "assets/carrot.png"
 
 class App extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      toDoItems: [{ id: 1, value: "+", checkedDates: ["2018-01-01", "2018-01-04"] }, { id: 2, value: "+" },
-        { id: 3, value: "+" }, { id: 4, value: "+" },
+      toDoItems: [
+        {
+          id: 1,
+          value: "+",
+          checked: true,
+          times: 4,
+          symbol: carrot,
+          checkedDates: ["2018-01-01", "2018-01-04"]
+        },
+        { id: 2, value: "+" },
+        { id: 3, value: "+" }, { id: 4, value: "+", checkedDates: ["2018-01-03", "2018-01-06"] },
         { id: 5, value: "+" }, { id: 6, value: "+" },
         { id: 7, value: "+" }, { id: 8, value: "+" }
       ],

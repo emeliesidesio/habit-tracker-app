@@ -4,17 +4,17 @@ import dateArray from "moment-array-dates"
 import CalendarDays from "./calendarDays.js"
 import "./calendar.css"
 
-const today = new Date()
-const startOfMonth = moment().startOf("month")
-const endOfMonth = moment().endOf("month")
-const daysInMonth = dateArray.range(startOfMonth, endOfMonth, "YYYY-MM-DD", true)
+// const today = new Date()
+// const startOfMonth = moment().startOf("month")
+// const endOfMonth = moment().endOf("month")
+// const daysInMonth = dateArray.range(startOfMonth, endOfMonth, "YYYY-MM-DD", true)
 const startOfWeek = moment().startOf("week")
 const endOfWeek = moment().endOf("week")
 const daysInWeek = dateArray.range(startOfWeek, endOfWeek, "YYYY-MM-DD", true)
-const momentToday = moment().format("dddd")
-const daysAgoFromToday = moment().subtract(3, "days")
-const daysFromToday = moment().add(3, "days")
-const thisWeek = dateArray.range(daysAgoFromToday, daysFromToday, "dddd", true)
+// const momentToday = moment().format("dddd")
+// const daysAgoFromToday = moment().subtract(3, "days")
+// const daysFromToday = moment().add(3, "days")
+// const thisWeek = dateArray.range(daysAgoFromToday, daysFromToday, "dddd", true)
 
 export default class Calendar extends React.Component {
 
@@ -56,6 +56,7 @@ export default class Calendar extends React.Component {
               <CalendarDays
                 id={item.id}
                 key={item.id}
+                symbol={item.symbol}
                 checkedDates={item.checkedDates}
                 kryss="o"
                 daysInWeek={daysInWeek}
