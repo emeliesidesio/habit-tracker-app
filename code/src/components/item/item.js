@@ -41,9 +41,9 @@ export default class Item extends React.Component {
           <div className="done-circle-checked">
             <input
               id="done-circle"
-              type="checkbox" />
-            {/* // checked={this.state.done}
-             // onChange={this.handleCheck} /> */}
+              type="checkbox"
+              checked={this.state.done}
+              onChange={this.handleCheck} />
             <label htmlFor="done-circle" />
           </div>
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
