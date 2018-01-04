@@ -11,7 +11,6 @@ export default class Item extends React.Component {
   }
 
   handleCheck = event => {
-    console.log("JAG ÄR ID", this.props.id, event.target.value)
     this.setState({
       done: !this.state.done
     }, () => {
@@ -38,14 +37,14 @@ export default class Item extends React.Component {
 
         {this.props.value !== "+" &&
         <div className="item-circle-icon">
-          <img className="symbol-circle" src={this.props.symbol} alt=""/>
+          <img className="symbol-circle" src={this.props.symbol} alt="" />
           <div className="done-circle-checked">
             <label>
-            <input
-              type="checkbox"
-              value={this.props.id}
-              checked={this.state.done}
-              onChange={this.handleCheck} />
+              <input
+                type="checkbox"
+                value={this.props.id}
+                checked={this.state.done}
+                onChange={this.handleCheck} />
             </label>
           </div>
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>

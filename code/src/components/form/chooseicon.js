@@ -13,7 +13,6 @@ export default class ChooseIcon extends React.Component {
     this.setState({
       selectIcon: event.target.value
     }, () => {
-      console.log("an icon is choosen", this.state.selectIcon)
       this.props.setIcon(this.state.selectIcon)
     })
   }

@@ -5,24 +5,21 @@ import Form from "components/form/form.js"
 import Header from "components/header/header.js"
 import Calendar from "components/calendar/calendar.js"
 import List from "components/list/list"
-import carrot from "assets/carrot.png"
 
 const today = moment().format("YYYY-MM-DD")
 class App extends React.Component {
 
   constructor(props) {
     super(props)
-    let toDoItems =  [
+    let toDoItems = [
       {
         id: "0",
         value: "+",
-        checked: true,
-        times: 4,
-        symbol: carrot,
-        checkedDates: ["2018-01-01", "2018-01-04"]
+        checkedDates: []
       },
-      { id: "1", value: "+", checkedDates: []},
-      { id: "2", value: "+", checkedDates: [] }, { id: "3", value: "+", checkedDates: ["2018-01-03", "2018-01-06"] },
+      { id: "1", value: "+", checkedDates: [] },
+      { id: "2", value: "+", checkedDates: [] }, { id: "3", value: "+", checkedDates: [] },
+      { id: "4", value: "+", checkedDates: [] }, { id: "5", value: "+", checkedDates: [] },
       { id: "6", value: "+", checkedDates: [] }, { id: "7", value: "+", checkedDates: [] }
     ]
 
@@ -36,7 +33,6 @@ class App extends React.Component {
   }
 
   addItem = (id, item, done, times, radio) => {
-    console.log("got a new index in array", parseInt(id, 10))
     const allItems = this.state.toDoItems
     const itemIndex = parseInt(id, 10)
     allItems[itemIndex] = {
@@ -57,15 +53,8 @@ class App extends React.Component {
   }
 
   checkItem = (id, done) => {
-    console.log("this item is finished", id)
-    console.log("this item is done?", done)
-    // Om checked = true
-    // vill ta dagens datum
-    console.log(today)
-    // lägga till datumet i state i checkedDates
     const allItems = this.state.toDoItems
     const itemIndex = parseInt(id, 10)
-        console.log("I want to change this id", itemIndex)
     allItems[itemIndex].checkedDates = [...allItems[itemIndex].checkedDates, today]
     this.setState({
       toDoItems: allItems
@@ -77,7 +66,6 @@ class App extends React.Component {
   }
 
   removeItem = id => {
-    console.log("got a new index in array", (id))
     const allItems = this.state.toDoItems
     const itemIndex = parseInt(id, 10)
     allItems[itemIndex] = {
@@ -94,7 +82,6 @@ class App extends React.Component {
     }, () => {
       const jsonStringOfItems = JSON.stringify(this.state.toDoItems)
       localStorage.toDoItems = jsonStringOfItems
-      console.log("The items are: ", this.state.toDoItems)
     })
   }
 

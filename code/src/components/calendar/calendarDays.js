@@ -11,15 +11,12 @@ export default class Calendar extends React.Component {
   }
 
   componentDidMount() {
-    // console.log("the weeks dates:", this.props.daysInWeek)
-    // console.log("the checked dates:", this.props.checkedDates)
     if (this.props.checkedDates) {
       const isMatch = this.props.daysInWeek.map(date => {
         return this.props.checkedDates.find(d => (
           d === date
         ))
       })
-      // console.log("Matching dates", isMatch)
       this.setState({
         weekMatches: isMatch
       })

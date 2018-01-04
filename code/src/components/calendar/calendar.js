@@ -13,7 +13,6 @@ export default class Calendar extends React.Component {
 
   render() {
     let nonEmptyItems = this.props.toDoItems.filter(todo => todo.value !== "+")
-    console.log("ej tomma objekt", nonEmptyItems)
     if (nonEmptyItems.length < 1) {
       nonEmptyItems = this.props.toDoItems
     }

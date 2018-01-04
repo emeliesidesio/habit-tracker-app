@@ -43,10 +43,6 @@ export default class Form extends React.Component {
     })
   }
 
-  componentDidMount() {
-    console.log("This is the id", this.props.match.params.id)
-  }
-
   newItem = event => {
     this.setState({
       newToDoItem: event.target.value
@@ -56,7 +52,6 @@ export default class Form extends React.Component {
   handleSubmit = event => {
     event.preventDefault()
     if (this.state.newToDoItem !== "" && this.state.chooseIcon !== "" && this.state.timesAWeek !== "") {
-      console.log("A task was submitted:", this.state.newToDoItem)
       this.props.addItemToList(this.props.match.params.id, this.state.newToDoItem, this.state.done, this.state.timesAWeek, this.state.chooseIcon)
       this.setState({
         newToDoItem: "",

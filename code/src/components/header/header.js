@@ -8,7 +8,7 @@ export default class Header extends React.Component {
     return (
       <div className="header-container">
         <Link to="/"><div className="logo">Habit tracker</div></Link>
-        <Link to="/calendar"><img className="calendaricon" src={calendaricon} alt="" /></Link>
+        <Link to="/calendar"><img className="calendaricon" src={calendaricon} alt="Calendar Link" /></Link>
       </div>
     )
   }

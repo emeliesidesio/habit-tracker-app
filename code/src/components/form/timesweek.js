@@ -13,7 +13,6 @@ export default class TimesWeek extends React.Component {
     this.setState({
       times: event.target.value
     }, () => {
-      console.log("a number is choosen", this.state.times)
       this.props.setTime(this.state.times)
     })
   }
