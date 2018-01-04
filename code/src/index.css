@@ -9,9 +9,9 @@ body {
 .app-container {
   margin: 20px auto 20px auto;
   background: linear-gradient(to bottom right, blue, purple);
-  width: 320px;
-  min-height: 600px;
-  padding: 20px;
+  width: 25vw;
+  min-height: 12vw;
+  padding: 2vw;
 }
 
 a {
@@ -51,4 +51,13 @@ h2 {
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+@media (max-width: 376px) {
+  .app-container {
+    margin: 0;
+    width: auto;
+    height: 165vw;
+    padding: 8vw;
+  }
 }

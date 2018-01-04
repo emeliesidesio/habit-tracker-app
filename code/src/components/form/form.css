@@ -89,3 +89,9 @@
   color: black;
   cursor: pointer;
 }
+
+@media (max-width: 376px) {
+  .form-container {
+    padding: 10px;
+  }
+}
