@@ -21,10 +21,9 @@ class App extends React.Component {
         symbol: carrot,
         checkedDates: ["2018-01-01", "2018-01-04"]
       },
-      { id: "1", value: "+" },
-      { id: "2", value: "+" }, { id: "3", value: "+", checkedDates: ["2018-01-03", "2018-01-06"] },
-      { id: "4", value: "+" }, { id: "5", value: "+" },
-      { id: "6", value: "+" }, { id: "7", value: "+" }
+      { id: "1", value: "+", checkedDates: []},
+      { id: "2", value: "+", checkedDates: [] }, { id: "3", value: "+", checkedDates: ["2018-01-03", "2018-01-06"] },
+      { id: "6", value: "+", checkedDates: [] }, { id: "7", value: "+", checkedDates: [] }
     ]
 
     if (localStorage.toDoItems) {
@@ -66,6 +65,7 @@ class App extends React.Component {
     // lägga till datumet i state i checkedDates
     const allItems = this.state.toDoItems
     const itemIndex = parseInt(id, 10)
+        console.log("I want to change this id", itemIndex)
     allItems[itemIndex].checkedDates = [...allItems[itemIndex].checkedDates, today]
     this.setState({
       toDoItems: allItems
