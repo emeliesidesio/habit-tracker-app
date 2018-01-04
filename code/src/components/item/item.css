@@ -51,8 +51,6 @@
 /*create new checkbox*/
 
 .done-circle-checked {
-  height: 10px;
-  width: 10px;
   position: relative;
   left: 2px;
   top: 5px;
@@ -107,6 +105,14 @@
 	opacity: 1;
 }
 
+label:active {
+  background: #60d661;
+}
+
+input[type=checkbox] {
+  visibility: hidden;
+}
+
 /*end checkboxstyling*/
 
 .remove {
@@ -124,6 +130,5 @@
 .remove-icon {
   font-size: 50px;
   color: white;
-  font-weight: 500;
-  line-height: 26px;
+  line-height: 28px;
 }
