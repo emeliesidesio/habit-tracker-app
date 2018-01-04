@@ -55,14 +55,21 @@ class App extends React.Component {
   checkItem = (id, done) => {
     const allItems = this.state.toDoItems
     const itemIndex = parseInt(id, 10)
-    allItems[itemIndex].checkedDates = [...allItems[itemIndex].checkedDates, today]
-    this.setState({
-      toDoItems: allItems
-    }, () => {
-      console.log("The items are: ", this.state.toDoItems)
-    })
-    // Om checked = false
-    // ta bort dagens datum ur checkedDates
+    if (done) {
+      allItems[itemIndex].checkedDates = [...allItems[itemIndex].checkedDates, today]
+      this.setState({
+        toDoItems: allItems
+      }, () => {
+        console.log("The items are: ", this.state.toDoItems)
+      })
+    } else if (done === false) {
+      const removeDate = allItems[itemIndex].checkedDates.pop()
+      this.setState({
+        toDoItems: allItems
+      }, () => {
+        console.log("The items are: ", this.state.toDoItems)
+      })
+    }
   }
 
   removeItem = id => {
