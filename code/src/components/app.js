@@ -13,9 +13,10 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      toDoItems:
-      // JSON.parse(localStorage.toDoItems)
-      [
+
+      //toDoItems: JSON.parse(localStorage.toDoItems)
+      toDoItems: [
+
         {
           id: 1,
           value: "+",
