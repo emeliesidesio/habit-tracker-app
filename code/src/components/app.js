@@ -30,7 +30,7 @@ class App extends React.Component {
     if (localStorage.toDoItems) {
       toDoItems = JSON.parse(localStorage.toDoItems)
     }
-    debugger
+
     this.state = {
       toDoItems: toDoItems
     }
@@ -38,12 +38,10 @@ class App extends React.Component {
 
   addItem = (id, item, done, times, radio) => {
     console.log("got a new index in array", parseInt(id, 10))
-
     const allItems = this.state.toDoItems
     const itemIndex = parseInt(id, 10)
-    console.log("got a new id for this new item in array", toString(id))
     allItems[itemIndex] = {
-      id: toString(id),
+      id: id,
       value: item,
       checked: done,
       times: times,
@@ -79,11 +77,11 @@ class App extends React.Component {
   }
 
   removeItem = id => {
-    console.log("got a new index in array", (id) - 1)
-
+    console.log("got a new index in array", (id))
     const allItems = this.state.toDoItems
-    allItems[parseInt(id, 10)] = {
-      id: toString(id),
+    const itemIndex = parseInt(id, 10)
+    allItems[itemIndex] = {
+      id: id,
       value: "+",
       checked: false,
       times: "",
