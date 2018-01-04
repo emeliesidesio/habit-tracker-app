@@ -24,6 +24,7 @@ export default class Calendar extends React.Component {
         weekMatches: isMatch
       })
       console.log("State dates", isMatch)
+      console.log("State dates", this.state.weekMatches)
       console.log("Counter", this.state.matchCount)
     }
   }

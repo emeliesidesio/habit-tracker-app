@@ -12,37 +12,44 @@ class App extends React.Component {
 
   constructor(props) {
     super(props)
+    let toDoItems =  [
+      {
+        id: "0",
+        value: "+",
+        checked: true,
+        times: 4,
+        symbol: carrot,
+        checkedDates: ["2018-01-01", "2018-01-04"]
+      },
+      { id: "1", value: "+" },
+      { id: "2", value: "+" }, { id: "3", value: "+", checkedDates: ["2018-01-03", "2018-01-06"] },
+      { id: "4", value: "+" }, { id: "5", value: "+" },
+      { id: "6", value: "+" }, { id: "7", value: "+" }
+    ]
+
+    if (localStorage.toDoItems) {
+      toDoItems = JSON.parse(localStorage.toDoItems)
+    }
+    debugger
     this.state = {
-      //toDoItems: JSON.parse(localStorage.toDoItems)
-      toDoItems: [
-        {
-          id: 1,
-          value: "+",
-          checked: true,
-          times: 4,
-          symbol: carrot,
-          checkedDates: ["2018-01-01", "2018-01-04"]
-        },
-        { id: 2, value: "+" },
-        { id: 3, value: "+" }, { id: 4, value: "+", checkedDates: ["2018-01-03", "2018-01-06"] },
-        { id: 5, value: "+" }, { id: 6, value: "+" },
-        { id: 7, value: "+" }, { id: 8, value: "+" }
-      ]
+      toDoItems: toDoItems
     }
   }
 
   addItem = (id, item, done, times, radio) => {
-    console.log("got a new index in array", (id) - 1)
+    console.log("got a new index in array", parseInt(id, 10))
 
     const allItems = this.state.toDoItems
-    allItems[parseInt(id, 10) - 1] = {
-      id: id,
+    const itemIndex = parseInt(id, 10)
+    console.log("got a new id for this new item in array", toString(id))
+    allItems[itemIndex] = {
+      id: toString(id),
       value: item,
       checked: done,
       times: times,
-      symbol: radio
+      symbol: radio,
+      checkedDates: []
     }
-
     this.setState({
       toDoItems: allItems
     }, () => {
@@ -55,27 +62,28 @@ class App extends React.Component {
   checkItem = (id, done) => {
     console.log("this item is finished", id)
     console.log("this item is done?", done)
-  //   // Om checked = true
-  //   // vill ta dagens datum
-  //   console.log(today)
-  //   // lägga till datumet i state i checkedDates
-  //   const allItems = this.state.toDoItems
-  //   allItems[parseInt(id)-1].checkedDates = [...allItems[parseInt(id)-1].checkedDates, today]
-  //   this.setState({
-  //     toDoItems: allItems
-  //   }, () => {
-  //     console.log("The items are: ", this.state.toDoItems)
-  //   })
-  //   // Om checked = false
-  //   // ta bort dagens datum ur checkedDates
+    // Om checked = true
+    // vill ta dagens datum
+    console.log(today)
+    // lägga till datumet i state i checkedDates
+    const allItems = this.state.toDoItems
+    const itemIndex = parseInt(id, 10)
+    allItems[itemIndex].checkedDates = [...allItems[itemIndex].checkedDates, today]
+    this.setState({
+      toDoItems: allItems
+    }, () => {
+      console.log("The items are: ", this.state.toDoItems)
+    })
+    // Om checked = false
+    // ta bort dagens datum ur checkedDates
   }
 
   removeItem = id => {
     console.log("got a new index in array", (id) - 1)
 
     const allItems = this.state.toDoItems
-    allItems[parseInt(id, 10) - 1] = {
-      id: id,
+    allItems[parseInt(id, 10)] = {
+      id: toString(id),
       value: "+",
       checked: false,
       times: "",
@@ -112,10 +120,11 @@ class App extends React.Component {
                 <List
                   {...routeProps}
                   toDoItems={this.state.toDoItems}
+                  id={this.state.toDoItems.id}
                   value={this.state.value}
-                  removeItem={this.removeItem}
                   symbol={this.state.symbol}
-                  lastClickedId={this.changeLastClickedId} />
+                  removeItem={this.removeItem}
+                  checkItem={this.checkItem} />
               } />
           </div>
           <Route
