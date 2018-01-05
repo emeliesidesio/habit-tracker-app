@@ -71,9 +71,9 @@ export default class Form extends React.Component {
           <p className="form-copy">For how many times a week?</p>
           <div className="task-amount">
             {times.map(amount => (
-              <TimesWeek
-                day={amount}
-                setTime={this.number} />
+                <TimesWeek
+                  day={amount}
+                  setTime={this.number} />
             ))}
           </div>
 

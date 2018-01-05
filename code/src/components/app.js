@@ -1,5 +1,6 @@
 import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
+import { Animated } from "react-animated-css"
 import moment from "moment"
 import Form from "components/form/form.js"
 import Header from "components/header/header.js"
@@ -12,15 +13,10 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     let toDoItems = [
-      {
-        id: "0",
-        value: "+",
-        checkedDates: []
-      },
-      { id: "1", value: "+", checkedDates: [] },
-      { id: "2", value: "+", checkedDates: [] }, { id: "3", value: "+", checkedDates: [] },
-      { id: "4", value: "+", checkedDates: [] }, { id: "5", value: "+", checkedDates: [] },
-      { id: "6", value: "+", checkedDates: [] }, { id: "7", value: "+", checkedDates: [] }
+      { id: "0", value: "+" }, { id: "1", value: "+" },
+      { id: "2", value: "+" }, { id: "3", value: "+" },
+      { id: "4", value: "+" }, { id: "5", value: "+" },
+      { id: "6", value: "+" }, { id: "7", value: "+" }
     ]
 
     if (localStorage.toDoItems) {
@@ -103,9 +99,11 @@ class App extends React.Component {
           <Route
             path="/form/:id"
             render={routeProps =>
-              <Form
-                {...routeProps}
-                addItemToList={this.addItem} />
+              <Animated animationIn="slideInUp" animationOut="fadeOut" isVisible={true}>
+                <Form
+                  {...routeProps}
+                  addItemToList={this.addItem} />
+              </Animated>
             } />
           <div className="ItemsList">
             <Route
@@ -126,9 +124,11 @@ class App extends React.Component {
             exact
             path="/calendar"
             render={routeProps =>
-              <Calendar
+              <Animated animationIn="slideInLeft" animationOut="fadeOut" isVisible={true}>
+                <Calendar
                 {...routeProps}
                 toDoItems={this.state.toDoItems} />
+              </Animated>
             } />
         </div>
       </BrowserRouter>
