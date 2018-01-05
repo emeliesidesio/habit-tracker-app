@@ -124,7 +124,7 @@ class App extends React.Component {
             exact
             path="/calendar"
             render={routeProps =>
-              <Animated animationIn="slideInUp" animationOut="fadeOut" isVisible={true}>
+              <Animated animationIn="slideInLeft" animationOut="fadeOut" isVisible={true}>
                 <Calendar
                 {...routeProps}
                 toDoItems={this.state.toDoItems} />
