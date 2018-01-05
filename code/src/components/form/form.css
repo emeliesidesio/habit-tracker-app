@@ -3,7 +3,7 @@
 }
 
 .input-value {
-  width: 90%;
+  width: 95%;
   border: none;
   border-bottom: 1px solid white;
   padding: 5px;
@@ -25,6 +25,7 @@
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  margin-right: 4px;
 }
 
 .form-copy {
@@ -48,12 +49,13 @@
 .icon-container {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .habiticon {
   width: 36px;
   height: 36px;
-  margin-right: 10px;
+  margin-right: 7px;
   margin-bottom: 10px;
 }
 
