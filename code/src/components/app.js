@@ -1,5 +1,6 @@
 import React from "react"
 import { BrowserRouter, Route } from "react-router-dom"
+import { Animated } from "react-animated-css"
 import moment from "moment"
 import Form from "components/form/form.js"
 import Header from "components/header/header.js"
@@ -98,9 +99,11 @@ class App extends React.Component {
           <Route
             path="/form/:id"
             render={routeProps =>
-              <Form
-                {...routeProps}
-                addItemToList={this.addItem} />
+              <Animated animationIn="slideInUp" animationOut="fadeOut" isVisible={true}>
+                <Form
+                  {...routeProps}
+                  addItemToList={this.addItem} />
+              </Animated>
             } />
           <div className="ItemsList">
             <Route
@@ -121,9 +124,11 @@ class App extends React.Component {
             exact
             path="/calendar"
             render={routeProps =>
-              <Calendar
+              <Animated animationIn="slideInUp" animationOut="fadeOut" isVisible={true}>
+                <Calendar
                 {...routeProps}
                 toDoItems={this.state.toDoItems} />
+              </Animated>
             } />
         </div>
       </BrowserRouter>

@@ -20,12 +20,10 @@ export default class TimesWeek extends React.Component {
 
   render() {
     return (
-      <Animated animationIn="bounceInLeft" animationOut="fadeOut" isVisible={true}>
         <label className="checklabel">
           <input className="checkinput" type="radio" name="amount" onChange={this.number} value={this.props.day} />
           <h6 className="day">{this.props.day}</h6>
         </label>
-      </Animated>
     )
   }
 }
