@@ -66,7 +66,7 @@ export default class Form extends React.Component {
         {this.state.complete && <Redirect to="/" />}
         <h1>I will...</h1>
         <form onSubmit={this.handleSubmit}>
-          <input className="input-value" type="text" placeholder="Write a new habit here!" value={this.state.newToDoItem} onChange={this.newItem} onKeyPress={this.newItem} />
+          <input className="input-value" type="text" placeholder="Write a new habit here:" value={this.state.newToDoItem} onChange={this.newItem} onKeyPress={this.newItem} />
 
           <p className="form-copy">For how many times a week?</p>
           <div className="task-amount">
