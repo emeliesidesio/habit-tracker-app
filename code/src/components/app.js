@@ -61,15 +61,18 @@ class App extends React.Component {
         toDoItems: allItems
       }, () => {
         console.log("The items are: ", this.state.toDoItems)
-      })
-    } else if (done === false) {
-      const removeDate = allItems[itemIndex].checkedDates.pop()
-      this.setState({
-        toDoItems: allItems
-      }, () => {
-        console.log("The items are: ", this.state.toDoItems)
+        const jsonStringOfItems = JSON.stringify(this.state.toDoItems)
+        localStorage.toDoItems = jsonStringOfItems
       })
     }
+    // else if (done === false) {
+    //   const removeDate = allItems[itemIndex].checkedDates.pop()
+    //   this.setState({
+    //     toDoItems: allItems
+    //   }, () => {
+    //     console.log("The items are: ", this.state.toDoItems)
+    //   })
+    // }
   }
 
   removeItem = id => {
