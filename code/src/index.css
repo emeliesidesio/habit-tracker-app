@@ -53,6 +53,13 @@ h2 {
   cursor: pointer;
 }
 
+@keyframes bounce {
+  50% {
+    transform: translate3d(180deg);
+  }
+
+}
+
 @media (max-width: 376px) {
   .app-container {
     margin: 0;
