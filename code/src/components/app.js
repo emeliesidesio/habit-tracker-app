@@ -74,6 +74,7 @@ class App extends React.Component {
     }
   }
 
+
   removeItem = id => {
     const allItems = this.state.toDoItems
     const itemIndex = parseInt(id, 10)
@@ -116,10 +117,6 @@ class App extends React.Component {
                 <List
                   {...routeProps}
                   toDoItems={this.state.toDoItems}
-                  id={this.state.toDoItems.id}
-                  done={this.state.toDoItems.checked}
-                  value={this.state.value}
-                  symbol={this.state.symbol}
                   removeItem={this.removeItem}
                   checkItem={this.checkItem} />
               } />

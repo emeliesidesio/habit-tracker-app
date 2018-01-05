@@ -44,8 +44,8 @@ export default class Item extends React.Component {
         {this.props.value !== "+" &&
         <div className="item-circle-icon">
           <img className="symbol-circle" src={this.props.symbol} alt="" />
-          <div className="checkmark-above" />
           <label className="container">
+            <div className="checkmark-above" />
             <input
               className="done-circle-input"
               type="checkbox"
