@@ -12,15 +12,10 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     let toDoItems = [
-      {
-        id: "0",
-        value: "+",
-        checkedDates: []
-      },
-      { id: "1", value: "+", checkedDates: [] },
-      { id: "2", value: "+", checkedDates: [] }, { id: "3", value: "+", checkedDates: [] },
-      { id: "4", value: "+", checkedDates: [] }, { id: "5", value: "+", checkedDates: [] },
-      { id: "6", value: "+", checkedDates: [] }, { id: "7", value: "+", checkedDates: [] }
+      { id: "0", value: "+" }, { id: "1", value: "+" },
+      { id: "2", value: "+" }, { id: "3", value: "+" },
+      { id: "4", value: "+" }, { id: "5", value: "+" },
+      { id: "6", value: "+" }, { id: "7", value: "+" }
     ]
 
     if (localStorage.toDoItems) {
