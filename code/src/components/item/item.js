@@ -5,12 +5,18 @@ import "./item.css"
 export default class Item extends React.Component {
   constructor(props) {
     super(props)
+    let done = false
+    if (this.props.done === true) {
+      done = true
+    }
+    console.log("status på checken", done)
     this.state = {
-      done: false
+      done: done
     }
   }
 
   handleCheck = event => {
+    console.log("JAG CHECKADE")
     this.setState({
       done: !this.state.done
     }, () => {
@@ -46,7 +52,7 @@ export default class Item extends React.Component {
               value={this.props.id}
               checked={this.state.done}
               onChange={this.handleCheck} />
-            <span className="checkmark" />
+            <span className="checkmark"/>
           </label>
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
           <div className="item-title">{this.props.value}</div>

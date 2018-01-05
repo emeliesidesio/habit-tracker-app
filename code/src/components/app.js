@@ -53,6 +53,7 @@ class App extends React.Component {
     const itemIndex = parseInt(id, 10)
     if (done) {
       allItems[itemIndex].checkedDates = [...allItems[itemIndex].checkedDates, today]
+      allItems[itemIndex].checked = done
       this.setState({
         toDoItems: allItems
       }, () => {
@@ -61,14 +62,16 @@ class App extends React.Component {
         localStorage.toDoItems = jsonStringOfItems
       })
     }
-    // else if (done === false) {
-    //   const removeDate = allItems[itemIndex].checkedDates.pop()
-    //   this.setState({
-    //     toDoItems: allItems
-    //   }, () => {
-    //     console.log("The items are: ", this.state.toDoItems)
-    //   })
-    // }
+    else if (done === false) {
+      allItems[itemIndex].checked = done
+      this.setState({
+        toDoItems: allItems
+      }, () => {
+        console.log("The items are: ", this.state.toDoItems)
+        const jsonStringOfItems = JSON.stringify(this.state.toDoItems)
+        localStorage.toDoItems = jsonStringOfItems
+      })
+    }
   }
 
   removeItem = id => {
@@ -114,6 +117,7 @@ class App extends React.Component {
                   {...routeProps}
                   toDoItems={this.state.toDoItems}
                   id={this.state.toDoItems.id}
+                  done={this.state.toDoItems.checked}
                   value={this.state.value}
                   symbol={this.state.symbol}
                   removeItem={this.removeItem}

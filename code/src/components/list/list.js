@@ -10,6 +10,7 @@ export default class List extends React.Component {
         {this.props.toDoItems.map(toDoItems => (
           <Item
             key={toDoItems.id}
+            done={toDoItems.checked}
             id={toDoItems.id}
             symbol={toDoItems.symbol}
             value={toDoItems.value}
