@@ -38,18 +38,20 @@ export default class Item extends React.Component {
         {this.props.value !== "+" &&
         <div className="item-circle-icon">
           <img className="symbol-circle" src={this.props.symbol} alt="" />
-          <div className="done-circle-checked">
-            <label>
-              <input
-                type="checkbox"
-                value={this.props.id}
-                checked={this.state.done}
-                onChange={this.handleCheck} />
-            </label>
-          </div>
+          <div className="checkmark-above" />
+          <label className="container">
+            <input
+              className="done-circle-input"
+              type="checkbox"
+              value={this.props.id}
+              checked={this.state.done}
+              onChange={this.handleCheck} />
+            <span className="checkmark" />
+          </label>
           <button className="remove" onClick={this.handleRemoveClick}><span className="remove-icon">-</span></button>
           <div className="item-title">{this.props.value}</div>
         </div>}
+
       </div>
     )
   }

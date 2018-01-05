@@ -46,70 +46,52 @@
   height: 45px;
 }
 
-/*start checkboxstyling*/
-
-/*create new checkbox*/
-
-.done-circle-checked {
+.container {
+  display: block;
   position: relative;
-  left: 2px;
-  top: 5px;
-  z-index: 5px;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
 }
 
-/**
- * Create the box for the checkbox
- */
-.done-circle-checked label {
-	cursor: pointer;
-	position: absolute;
-	width: 35px;
-	height: 35px;
-	top: -5px;
-  left: -5px;
-	background: #f4a804;
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  height: 35px;
+  width: 35px;
+  background-color: orange;
   border-radius: 50%;
 }
 
-/**
- * Display the tick inside the checkbox
- */
-.done-circle-checked label:after {
-	opacity: 0.4;
-	content: '';
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  top: 0;
+  left: -10px;
+}
+
+
+/* When the checkbox is checked, add a green background */
+.container input:checked ~ .checkmark {
+  background-color: green;
+}
+
+.checkmark-above {
 	position: absolute;
 	width: 12px;
 	height: 7px;
-	background: transparent;
-	top: 9px;
-	left: 9px;
+	top: 10px;
+	left: -2px;
 	border: 5px solid white;
 	border-top: none;
 	border-right: none;
 	transform: rotate(-45deg);
+  z-index: 50;
 }
-
-/**
- * Create the hover event of the tick
- */
-
-.done-circle-checked label:hover::after {
-	opacity: 0.7;
-}
-
-/**
- * Create the checkbox state for the tick
- */
-
-.done-circle-checked input[type=checkbox]:checked + label:after {
-	opacity: 1;
-}
-
-input[type=checkbox] {
-  visibility: hidden;
-}
-
-/*end checkboxstyling*/
 
 .remove {
   width: 35px;
